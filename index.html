@@ -2,11 +2,16 @@
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#ec4899" />
+  <link rel="manifest" href="/manifest.json" />
   <link rel="icon" type="image/png" href="/src/assets/images/getstock56_favicon_1780068636097.png" />
+  <link rel="apple-touch-icon" href="/src/assets/images/getstock56_favicon_1780068636097.png" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <title>GetStock56 | Universal Growth Agency</title>
   
-  <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -18,13 +23,10 @@
     }
   </script>
   
-  <!-- Google Fonts: Inter -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   
-  <!-- Lucide Icons via CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
   
-  <!-- Custom Vanilla Animations -->
   <style>
     .faq-answer {
       transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
@@ -46,44 +48,50 @@
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    .safe-area-pb {
+      padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
+    }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans min-h-screen flex flex-col selection:bg-pink-100 selection:text-pink-900">
+<body class="bg-gray-50 text-gray-900 font-sans min-h-screen flex flex-col selection:bg-pink-100 selection:text-pink-900 pb-20 md:pb-0">
   
-  <!-- Header -->
   <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
     <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
       <div class="text-2xl font-extrabold text-black tracking-tight">
         GET<span class="text-pink-500">STOCK56</span>
       </div>
       
-      <!-- Desktop Nav -->
       <div class="space-x-8 font-medium hidden md:flex items-center">
         <a href="#services" class="hover:text-pink-500 transition-colors text-gray-600">Services</a>
+        <a href="#ai-tool" class="hover:text-pink-500 transition-colors text-gray-600">AI Tools</a>
         <a href="#faq" class="hover:text-pink-500 transition-colors text-gray-600">FAQ</a>
         <a href="#contact" class="bg-black text-white px-6 py-2.5 rounded-full hover:bg-gray-800 transition-colors font-semibold">
           Get Started
         </a>
       </div>
 
-      <!-- Mobile Menu Button -->
-      <button id="mobile-menu-btn" class="md:hidden p-2 -mr-2 text-gray-600 hover:text-black transition-colors" aria-label="Toggle menu">
-        <i data-lucide="menu" id="menu-icon"></i>
-        <i data-lucide="x" id="close-icon" class="hidden"></i>
-      </button>
     </nav>
-
-    <!-- Mobile Nav -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
-      <div class="flex flex-col px-6 py-4 space-y-4">
-        <a href="#services" class="mobile-link block font-medium text-gray-700 hover:text-pink-500 py-2">Services</a>
-        <a href="#faq" class="mobile-link block font-medium text-gray-700 hover:text-pink-500 py-2">FAQ</a>
-        <a href="#contact" class="mobile-link block font-semibold bg-black text-white px-5 py-3 rounded-xl text-center w-full">Get Started</a>
-      </div>
-    </div>
   </header>
 
-  <!-- Hero -->
+  <nav class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 z-50 flex justify-around items-center px-2 py-3 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] safe-area-pb">
+    <a href="#" class="mobile-nav-link flex flex-col items-center gap-1 text-gray-500 hover:text-pink-500 transition-colors w-16" data-target="#home">
+      <i data-lucide="home" class="w-5 h-5"></i>
+      <span class="text-[10px] font-medium">Home</span>
+    </a>
+    <a href="#services" class="mobile-nav-link flex flex-col items-center gap-1 text-gray-500 hover:text-pink-500 transition-colors w-16" data-target="#services">
+      <i data-lucide="briefcase" class="w-5 h-5"></i>
+      <span class="text-[10px] font-medium">Services</span>
+    </a>
+    <a href="#ai-tool" class="mobile-nav-link flex flex-col items-center gap-1 text-gray-500 hover:text-pink-500 transition-colors w-16" data-target="#ai-tool">
+      <i data-lucide="sparkles" class="w-5 h-5"></i>
+      <span class="text-[10px] font-medium">AI Tools</span>
+    </a>
+    <a href="#contact" class="mobile-nav-link flex flex-col items-center gap-1 text-gray-400 hover:text-pink-500 transition-colors w-16" data-target="#contact">
+      <i data-lucide="mail" class="w-5 h-5"></i>
+      <span class="text-[10px] font-medium">Contact</span>
+    </a>
+  </nav>
+
   <main class="relative max-w-6xl mx-auto px-6 py-24 md:py-40 text-center flex-grow flex flex-col justify-center w-full overflow-hidden">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-pink-500/10 rounded-full blur-3xl -z-10 pointer-events-none"></div>
 
@@ -96,7 +104,6 @@
         High-converting ad strategies for TikTok, Meta, and beyond.
       </p>
 
-      <!-- CTA Button -->
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
         <a href="https://getstartedtiktok.partnerlinks.io/l05gptx6mnto" target="_blank" rel="noopener noreferrer" class="bg-black text-white text-lg px-10 py-4 rounded-full font-bold shadow-xl shadow-black/10 hover:bg-gray-900 hover:shadow-black/20 hover:-translate-y-1 transition-all inline-flex items-center gap-3 w-full sm:w-auto justify-center">
           Start Scaling <i data-lucide="arrow-right" class="w-5 h-5 stroke-[3]"></i>
@@ -108,43 +115,55 @@
     </div>
   </main>
 
-  <!-- Trusted By -->
   <section class="py-10 bg-white border-b border-gray-100">
     <div class="max-w-6xl mx-auto px-6">
       <p class="text-center text-xs font-semibold text-gray-400 tracking-widest uppercase mb-6">
         Trusted By Platforms & Partners
       </p>
-      <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60 grayscale hover:grayscale-0 transition-opacity duration-300">
-        <!-- Meta -->
-        <div class="flex items-center gap-2 hover:text-[#0668E1] transition-colors cursor-pointer">
-          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 1 0 0-8c-2 0-4 1.33-6 4Z"/>
+      <div class="flex flex-wrap justify-center items-center gap-10 md:gap-14 opacity-60 grayscale hover:grayscale-0 transition-opacity duration-300">
+        <a href="https://www.facebook.com/business" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-[#0668E1] transition-colors cursor-pointer">
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
           </svg>
-          <span class="text-xl font-bold tracking-tighter">Meta</span>
-        </div>
-        
-        <!-- TikTok -->
-        <div class="flex items-center gap-1.5 hover:text-black transition-colors cursor-pointer">
-          <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 15.68a6.34 6.34 0 0 0 6.27 6.36 6.34 6.34 0 0 0 6.25-6.36V7.94a8.28 8.28 0 0 0 4.19 1.15V5.62a4.91 4.91 0 0 1-2.12-.55z"/>
-          </svg>
-          <span class="text-xl font-bold tracking-tighter">TikTok</span>
-        </div>
+          <span class="text-xl font-bold tracking-tighter">Facebook</span>
+        </a>
 
-        <!-- Instagram -->
-        <div class="flex items-center gap-2 hover:text-[#E1306C] transition-colors cursor-pointer">
-          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+        <a href="https://www.youtube.com/ads/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-[#FF0000] transition-colors cursor-pointer">
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
+             <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
           </svg>
-          <span class="text-xl font-bold tracking-tighter">Instagram</span>
-        </div>
+          <span class="text-xl font-bold tracking-tighter">YouTube</span>
+        </a>
+
+        <a href="https://ads.twitter.com/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-black transition-colors cursor-pointer">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/>
+          </svg>
+          <span class="text-xl font-bold tracking-tighter">Twitter</span>
+        </a>
+
+        <a href="https://business.pinterest.com/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-[#E60023] transition-colors cursor-pointer">
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
+             <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.951-7.252 4.168 0 7.41 2.967 7.41 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.367 18.592 0 12.017 0z"/>
+          </svg>
+          <span class="text-xl font-bold tracking-tighter">Pinterest</span>
+        </a>
+
+        <a href="https://www.threads.net/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-[black] transition-colors cursor-pointer">
+          <i data-lucide="at-sign" class="w-7 h-7 stroke-[2.5]"></i>
+          <span class="text-xl font-bold tracking-tighter">Threads</span>
+        </a>
+
+        <a href="https://business.linkedin.com/marketing-solutions" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-[#0077b5] transition-colors cursor-pointer">
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+          <span class="text-xl font-bold tracking-tighter">LinkedIn</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Services -->
   <section id="services" class="bg-white py-24 scroll-mt-16">
     <div class="max-w-6xl mx-auto px-6">
       <div>
@@ -168,23 +187,101 @@
             <i data-lucide="target" class="w-7 h-7"></i>
           </div>
           <h3 class="font-bold text-2xl mb-4 group-hover:text-black transition-colors">Meta Ads Management</h3>
-          <p class="text-gray-600 text-lg leading-relaxed">Advanced targeting and conversion funnels for Facebook and Instagram designed to maximize ROI and scale your customer acquisition efficiently.</p>
+          <p class="text-gray-600 text-lg mb-8 leading-relaxed">Advanced targeting and conversion funnels for Facebook and Instagram designed to maximize ROI and scale your customer acquisition efficiently.</p>
+          <a href="#contact" class="inline-flex items-center gap-2 font-bold text-blue-600 hover:text-blue-800 transition-colors group/link">
+            Get Meta Strategy <i data-lucide="arrow-right" class="w-4 h-4 group-hover/link:translate-x-1 transition-transform"></i>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
+  <section id="ai-tool" class="py-24 bg-pink-50 scroll-mt-16 relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 relative z-10 flex flex-col lg:flex-row gap-8 items-start">
+      
+      <div class="flex-1 w-full">
+        <div class="text-center lg:text-left mb-12">
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-pink-100 text-pink-600 rounded-full text-sm font-semibold mb-4">
+            <i data-lucide="sparkles" class="w-4 h-4"></i> New AI Engine
+          </div>
+          <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 mb-4">Free AI Hook Generator</h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto lg:mx-0">Stumped on ad creatives? Generate high-converting, curiosity-driven TikTok & Meta hooks instantly using our proprietary AI logic.</p>
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-xl shadow-pink-500/5 border border-pink-100 p-6 md:p-10 mb-8 lg:mb-0">
+          <div class="space-y-6">
+            <div>
+              <label for="product-info" class="block font-semibold text-gray-900 mb-2">Describe your product or service</label>
+              <input type="text" id="product-info" class="w-full p-4 border border-gray-200 rounded-2xl focus:outline-none focus:border-pink-500 focus:ring-4 focus:ring-pink-500/10 transition-all font-medium" placeholder="e.g. A skincare serum that clears acne in 7 days without drying skin..." />
+            </div>
+            <div>
+              <label for="hook-tone" class="block font-semibold text-gray-900 mb-2">Tone</label>
+              <select id="hook-tone" class="w-full p-4 border border-gray-200 rounded-2xl focus:outline-none focus:border-pink-500 focus:ring-4 focus:ring-pink-500/10 transition-all font-medium bg-white">
+                <option value="Direct & Aggressive">Direct & Aggressive</option>
+                <option value="Informative & Educational">Informative & Educational</option>
+                <option value="Humorous & Relatable">Humorous & Relatable</option>
+                <option value="Curiosity & Mystery">Curiosity & Mystery</option>
+                <option value="Urgent & FOMO">Urgent & FOMO</option>
+              </select>
+            </div>
+            <button id="generate-hook-btn" class="w-full bg-black text-white p-4 rounded-2xl font-bold hover:bg-gray-800 transition-all flex items-center justify-center gap-2 group">
+              <i data-lucide="zap" class="w-5 h-5 text-pink-500 group-hover:scale-110 transition-transform"></i>
+              Generate Hooks 
+            </button>
+          </div>
+
+          <div id="ai-results-container" class="mt-8 space-y-4 hidden">
+            <div class="flex justify-between items-center border-b border-gray-100 pb-3 mb-4">
+              <h3 class="font-bold text-gray-900 text-xl">Your Generated Hooks</h3>
+              <button id="export-hooks-btn" class="text-sm bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1.5 rounded-lg font-medium flex items-center gap-1.5 transition-colors" title="Export as .txt">
+                <i data-lucide="download" class="w-4 h-4"></i> Export
+              </button>
+            </div>
+            <div id="ai-hooks-list" class="space-y-3">
+              </div>
+          </div>
+
+          <div id="ai-loading" class="mt-8 flex flex-col items-center justify-center hidden py-8">
+            <i data-lucide="loader-2" class="w-8 h-8 text-pink-500 animate-spin mb-4"></i>
+            <p id="ai-loading-text" class="text-gray-500 font-medium animate-pulse text-center h-6 min-w-[300px] transition-opacity duration-300">Analyzing angles & generating hooks...</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="w-full lg:w-[320px] shrink-0 lg:sticky lg:top-24 mt-8 lg:mt-0 flex flex-col gap-6">
+        <div class="bg-white rounded-3xl shadow-xl shadow-pink-500/5 border border-pink-100 p-6">
+          <div class="flex items-center justify-between border-b border-gray-100 pb-4 mb-4">
+            <h3 class="font-bold text-lg text-gray-900 flex items-center gap-2">
+              <i data-lucide="history" class="w-5 h-5 text-pink-500"></i> Recent Searches
+            </h3>
+          </div>
+          <div id="recent-searches-list" class="space-y-2 max-h-[250px] overflow-y-auto pr-2 custom-scrollbar">
+            <div class="text-center text-sm text-gray-500 py-6 italic">No recent searches yet</div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-pink-50 to-white rounded-3xl shadow-xl shadow-pink-500/5 border border-pink-100 p-6">
+          <div class="flex items-center justify-between border-b border-pink-100 pb-4 mb-4">
+            <h3 class="font-bold text-lg text-gray-900 flex items-center gap-2">
+              <i data-lucide="lightbulb" class="w-5 h-5 text-yellow-500"></i> <span id="pro-tips-title">Pro-Tips</span>
+            </h3>
+          </div>
+          <div id="pro-tips-list" class="space-y-3">
+             </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <section id="faq" class="py-24 bg-white scroll-mt-16">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 tracking-tight">Frequently Asked Questions</h2>
       <div class="space-y-4" id="faq-container">
-        <!-- FAQs injected via JS -->
-      </div>
+        </div>
     </div>
   </section>
 
-  <!-- Testimonials -->
   <section class="py-24 bg-gray-900 text-white scroll-mt-16 overflow-hidden">
     <div class="max-w-4xl mx-auto px-6 text-center">
       <h2 class="text-3xl md:text-5xl font-bold mb-16 tracking-tight">Client Success</h2>
@@ -195,8 +292,7 @@
             <i data-lucide="quote" class="w-12 h-12 text-pink-500/30"></i>
           </div>
           <blockquote class="text-2xl md:text-4xl font-medium leading-tight mb-8" id="t-quote">
-            <!-- Quote -->
-          </blockquote>
+            </blockquote>
           <div class="flex flex-col items-center">
             <div class="font-bold text-xl" id="t-author"></div>
             <div class="text-pink-400 font-medium" id="t-role"></div>
@@ -207,229 +303,4 @@
           <i data-lucide="chevron-left" class="w-7 h-7"></i>
         </button>
         <button id="t-next" class="absolute right-0 sm:-right-4 top-1/2 -translate-y-1/2 p-3 text-gray-500 hover:text-white bg-white/5 hover:bg-white/10 rounded-full transition-all focus:outline-none" aria-label="Next testimonial">
-          <i data-lucide="chevron-right" class="w-7 h-7"></i>
-        </button>
-      </div>
-      
-      <div class="flex justify-center gap-3 mt-12" id="t-dots">
-        <!-- Dots injected via JS -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="py-24 bg-gray-50 scroll-mt-16">
-    <div class="max-w-xl mx-auto px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-8 tracking-tight">Let's work together.</h2>
-      
-      <form id="contact-form" action="https://formspree.io/f/mreddegq" method="POST" class="space-y-5 text-left">
-        <div>
-          <label for="email" class="sr-only">Work Email</label>
-          <input type="email" id="email" name="email" placeholder="Work Email" class="w-full p-4 border border-gray-200 rounded-2xl focus:outline-none focus:border-pink-500 focus:ring-4 focus:ring-pink-500/10 transition-all bg-white" required />
-        </div>
-        <div>
-          <label for="message" class="sr-only">Message</label>
-          <textarea id="message" name="message" placeholder="How can we help you scale?" class="w-full p-4 border border-gray-200 rounded-2xl focus:outline-none focus:border-pink-500 focus:ring-4 focus:ring-pink-500/10 transition-all bg-white resize-y min-h-[160px]" required></textarea>
-        </div>
-        <button type="submit" class="w-full bg-black text-white p-4 rounded-2xl font-bold hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-black/20 transition-all text-lg shadow-lg">
-          Request Strategy Audit
-        </button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-white text-center py-10 border-t border-gray-100 text-gray-400 text-sm">
-    <div class="max-w-6xl mx-auto px-6" id="footer-year">
-       &copy; 2026 GetStock56. All rights reserved.
-    </div>
-  </footer>
-
-  <!-- Toast Notification -->
-  <div id="toast" class="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 bg-gray-900 text-white px-6 py-4 rounded-xl shadow-2xl flex items-center gap-4 z-50 max-w-sm transition-all duration-300 transform translate-y-20 opacity-0 pointer-events-none">
-    <i data-lucide="check-circle-2" class="text-pink-500 shrink-0 w-7 h-7"></i>
-    <div>
-      <div class="font-bold text-[15px]">Request received!</div>
-      <div class="text-gray-300 text-sm mt-0.5">We'll be in touch with your audit shortly.</div>
-    </div>
-    <button id="close-toast" class="ml-auto pl-2 text-gray-400 hover:text-white transition-colors focus:outline-none">
-      <i data-lucide="x" class="w-5 h-5"></i>
-    </button>
-  </div>
-
-  <!-- Vanilla Scripts -->
-  <script>
-    // Initialize Lucide Icons
-    lucide.createIcons();
-
-    // Footer Year
-    document.getElementById('footer-year').innerHTML = `&copy; ${new Date().getFullYear()} GetStock56. All rights reserved.`;
-
-    // Mobile Menu
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuIcon = document.getElementById('menu-icon');
-    const closeIcon = document.getElementById('close-icon');
-
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      menuIcon.classList.toggle('hidden');
-      closeIcon.classList.toggle('hidden');
-    });
-
-    document.querySelectorAll('.mobile-link').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        menuIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
-      });
-    });
-
-    // FAQs
-    const faqsData = [
-      {
-        question: "What platforms do you specialize in?",
-        answer: "We specialize in high-converting ad strategies primarily across TikTok, Meta (Facebook/Instagram), and Google Ads. Our expertise is tailored to leverage the unique algorithms and user behaviors of each platform."
-      },
-      {
-        question: "How does your pricing work?",
-        answer: "Our pricing is customized based on your business goals, current scale, and ad spend. We offer flexible arrangements including flat retainers and performance-based models. Contact us for a strategy audit to get a tailored quote."
-      },
-      {
-        question: "Do you handle ad creatives as well?",
-        answer: "Yes, we handle end-to-end creative production. This includes ideation, scriptwriting, sourcing user-generated content (UGC), and final video/image editing optimized for direct response."
-      },
-      {
-        question: "How soon can we expect to see results?",
-        answer: "While we often see initial traction within the first two weeks, a full optimization cycle usually takes 30 to 60 days to stabilize and sustainably scale your return on ad spend (ROAS)."
-      }
-    ];
-
-    const faqContainer = document.getElementById('faq-container');
-    faqsData.forEach((faq, index) => {
-      const faqHTML = `
-        <div class="faq-item border border-gray-100 rounded-2xl bg-gray-50 overflow-hidden transition-all duration-300">
-          <button class="flex justify-between items-center w-full p-6 text-left focus:outline-none" onclick="toggleFaq(${index})">
-            <span class="font-semibold text-lg text-gray-900 pr-8">${faq.question}</span>
-            <i data-lucide="chevron-down" class="faq-icon text-pink-500 shrink-0 transition-transform duration-300 w-6 h-6"></i>
-          </button>
-          <div class="faq-answer">
-            <div class="p-6 pt-0 text-gray-600 leading-relaxed text-lg">
-              ${faq.answer}
-            </div>
-          </div>
-        </div>
-      `;
-      faqContainer.insertAdjacentHTML('beforeend', faqHTML);
-    });
-    // Re-render icons for newly added HTML
-    lucide.createIcons();
-
-    function toggleFaq(index) {
-      const items = document.querySelectorAll('.faq-item');
-      items.forEach((item, i) => {
-        if (i === index) {
-          item.classList.toggle('open');
-        } else {
-          item.classList.remove('open');
-        }
-      });
-    }
-
-    // Testimonials
-    const testimonialsData = [
-      {
-        quote: "GetStock56 transformed our TikTok presence overnight. We saw a 300% increase in conversion rates within the first month.",
-        author: "Sarah J.",
-        role: "CMO, Elevate Brand"
-      },
-      {
-        quote: "Their Meta ads strategy is unmatched. The team's deep understanding of the algorithm helped us cut our CPA in half.",
-        author: "Michael T.",
-        role: "Founder, TechGear"
-      },
-      {
-        quote: "Finally, a growth agency that actually delivers on their promises. Highly recommend their UGC campaigns.",
-        author: "Elena R.",
-        role: "Marketing Director, Bloom Beauty"
-      }
-    ];
-
-    let tIndex = 0;
-    const tQuote = document.getElementById('t-quote');
-    const tAuthor = document.getElementById('t-author');
-    const tRole = document.getElementById('t-role');
-    const tDotsContainer = document.getElementById('t-dots');
-    const tSlide = document.getElementById('testimonial-slide');
-
-    function renderTestimonial() {
-      tSlide.style.opacity = 0;
-      setTimeout(() => {
-        tQuote.innerText = '"' + testimonialsData[tIndex].quote + '"';
-        tAuthor.innerText = testimonialsData[tIndex].author;
-        tRole.innerText = testimonialsData[tIndex].role;
-        
-        document.querySelectorAll('.t-dot').forEach((dot, i) => {
-          if (i === tIndex) {
-            dot.className = 't-dot h-2 rounded-full transition-all duration-300 bg-pink-500 w-8 focus:outline-none';
-          } else {
-            dot.className = 't-dot h-2 rounded-full transition-all duration-300 bg-gray-700 w-2 hover:bg-gray-500 focus:outline-none';
-          }
-        });
-        tSlide.style.opacity = 1;
-      }, 300); // 300ms matches transition duration
-    }
-
-    testimonialsData.forEach((_, i) => {
-      const dot = document.createElement('button');
-      dot.onclick = () => { tIndex = i; renderTestimonial(); };
-      dot.className = 't-dot h-2 rounded-full transition-all duration-300 bg-gray-700 w-2 hover:bg-gray-500 focus:outline-none';
-      dot.setAttribute('aria-label', `Go to testimonial ${i + 1}`);
-      tDotsContainer.appendChild(dot);
-    });
-
-    document.getElementById('t-prev').addEventListener('click', () => {
-      tIndex = (tIndex - 1 + testimonialsData.length) % testimonialsData.length;
-      renderTestimonial();
-    });
-
-    document.getElementById('t-next').addEventListener('click', () => {
-      tIndex = (tIndex + 1) % testimonialsData.length;
-      renderTestimonial();
-    });
-
-    // Initialize first testimonial
-    renderTestimonial();
-
-    // Form Submission & Toast
-    const form = document.getElementById('contact-form');
-    const toast = document.getElementById('toast');
-    const closeToast = document.getElementById('close-toast');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      try {
-        const formData = new FormData(form);
-        await fetch(form.action, {
-          method: form.method,
-          body: formData,
-          headers: { Accept: "application/json" }
-        });
-        
-        toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
-        form.reset();
-        
-        setTimeout(() => {
-          toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
-        }, 5000);
-      } catch (error) {
-        console.error("Form error:", error);
-      }
-    });
-
-    closeToast.addEventListener('click', () => {
-      toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
-    });
-  </script>
-</body>
-</html>
+          <i data-lucide="chevron-right" class="w
